@@ -1,11 +1,12 @@
 import './App.css';
+import SearchEngine from "./SearchEngine";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-       <h1>Test for netlify</h1>
-       <h2>Test 2</h2>
+      <header className="AppHeader">
+       <h1>Weather Search Engine</h1>
+       <SearchEngine />
       </header>
     </div>
   );
