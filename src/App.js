@@ -9,7 +9,7 @@ function App() {
        <SearchEngine />
       </header>
       <footer>
-        Open-source code by <a href="https://github.com/megj88/react-weather" target="_blank">Megan</a>
+        <p>Open-source code by <a href="https://github.com/megj88/react-weather" target="_blank">Megan</a></p>
       </footer>
     </div>
   );
