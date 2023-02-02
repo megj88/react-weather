@@ -8,6 +8,9 @@ function App() {
        <h1>Weather Search Engine</h1>
        <SearchEngine />
       </header>
+      <footer>
+        Open-source code by <a href="https://github.com/megj88/react-weather" target="_blank">Megan</a>
+      </footer>
     </div>
   );
 }
