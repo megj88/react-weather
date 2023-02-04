@@ -1,10 +1,14 @@
 .App {
   text-align: center;
+  margin-top: 50px;
 }
 
-header {
-  background: #ECF9FF;
-  padding: 50px;
+body {
+  background: #e7e6e6;
+}
+
+h1 {
+  text-align: center;
 }
 
 footer {

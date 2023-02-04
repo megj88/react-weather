@@ -1,3 +1,4 @@
+import "./weather.css";
 import React, { useState } from "react";
 import axios from "axios";
 
@@ -29,28 +30,54 @@ export default function WeatherSearch() {
   }
 
   let form = (
-    <form onSubmit={handleSubmit}>
-      <input type="search" placeholder="Enter a city.." onChange={updateCity} />
-      <button type="Submit">Search</button>
+    <form onSubmit={handleSubmit} className="mb-3 searchForm">
+           <div className="row">
+            <div className="col-9">
+      <input type="search" placeholder="Enter a city.." onChange={updateCity} /></div>
+      <div className="col-4">
+      <button type="Submit" className="btn btn-primary w-40">Search</button>
+      </div></div>
     </form>
   );
 
+
   if (loaded) {
-    return (
-      <div>
-        {form}
-        <ul>
-          <li>Temperature: {Math.round(weather.temperature)}°C</li>
-          <li>Description: {weather.description}</li>
-          <li>Humidity: {weather.humidity}%</li>
-          <li>Wind: {weather.wind}km/h</li>
-          <li>
+
+ return (
+    <div className="Weather">
+      <div className="weatherWrapper">
+     {form}
+        <div className="overview">
+          <h1 id="city">{city}</h1>
+          <ul>
+            <li>Last updated: 16:24</li>
+            <li>{weather.description}</li>
+          </ul>
+        </div>
+        <div className="row">
+          <div className="col-6">
+            <div className="d-flex weather-temperature">
             <img src={weather.icon} alt={weather.description} />
-          </li>
-        </ul>
+              <div className="float-left">
+                <strong>{Math.round(weather.temperature)}</strong>
+                <span className="units">
+                  <a href="/">°C</a> | <a href="/">°F</a>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="col-6">
+            <ul>
+              <li>Humidity: {weather.humidity}%</li>
+              <li>Wind: {weather.wind} km/h</li>
+            </ul>
+          </div>
+        </div>
       </div>
-    );
-  } else {
-    return form;
-  }
+    </div>
+  );
+} else {
+  return form;
 }
+}
+
